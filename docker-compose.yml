@@ -7,6 +7,14 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
+  api:
+    build: ./api
+    container_name: fastapi_llm
+    ports:
+      - "8001:8000"
+    #environments:
+    depends_on:
+      - ollama
 
 volumes:
   ollama_data:
