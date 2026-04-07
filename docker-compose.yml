@@ -1,0 +1,12 @@
+services:
+  ollama:
+    image: ollama/ollama:0.20.3
+    container_name: ollama_test
+    # pull de la imagen que quiero "tinyllama"
+    ports: 
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  ollama_data:
